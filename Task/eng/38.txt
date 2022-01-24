@@ -1,0 +1,20 @@
+Project 38.
+
+Task 1:
+Write a Money class designed to store a sum of money (in hryvnias and kopecks).
+Implement operator overloading for a class
++ (addition of monetary amounts)
+– (subtraction of sums)
+/ (dividing the sum by an integer)
+* (multiplying the sum by an integer)
+++ (the amount increases by 1 kopeck)
+-- (the amount is reduced by 1 kopeck)
+<
+>
+==
+!=
+The class cannot contain a negative sum.
+If the execution of any operation results in a negative amount of money,
+then the class throws a Bankrupt exception.
+The program should use the menu to demonstrate all the features of the Money class.
+Exception handling is done in the program.

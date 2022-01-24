@@ -1,0 +1,39 @@
+Project 30.
+
+Task 1:
+Describe an Article structure containing the following
+fields: product code; Product Name; the price of the goods.
+
+Task 2:
+Describe a Client structure containing fields: code
+client; FULL NAME; the address; telephone; the number of orders
+carried out by the client; total orders
+client
+
+Task 3:
+Come up with a class that describes the student. Provide for the following points in it: last name, first name,
+patronymic, group, age, array (jagged) scores by
+programming, administration and design.
+And also add methods for working with the listed data:
+the ability to set / receive an assessment, obtaining an average score for a given subject,
+student data printout.
+
+Task 4:
+Describe the Request structure containing the fields: code
+order; customer; order date; list of ordered goods;
+order amount (implemented as a computed property).
+
+Task 5:
+Describe an ArticleType enum defining
+product types, and add the corresponding field
+into the Article structure from task #1.
+
+Task 6:
+Describe a ClientType enum defining
+the importance of the client, and add the corresponding field
+into the Client structure from task #2.
+
+Task 7:
+Describe the PayType enum that defines the form
+payment by the customer of the order, and add the corresponding
+field to the Request structure from task #4.

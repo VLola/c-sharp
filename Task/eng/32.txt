@@ -1,0 +1,6 @@
+Project 32.
+
+Task 1:
+Develop an application that compares
+the population of the three capitals from different countries.
+Moreover, the country would be designated by a namespace, and the city by a class in this space.

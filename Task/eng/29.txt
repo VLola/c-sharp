@@ -1,0 +1,10 @@
+Project 29.
+
+Task 1:
+Declare a one-dimensional (5 elements) array named A and a two-dimensional array (3 rows, 4 columns) of fractional numbers named B. Fill one-dimensional array A with numbers entered from the keyboard by the user, and two-dimensional array B with random numbers using loops. Display the values ​​of arrays: array A in one line, array B - in the form of a matrix. Find in these arrays the total maximum element, the minimum element, the total sum of all elements, the total product of all elements, the sum of even elements of array A, the sum of odd columns of array B.
+
+Task 2:
+Given 2 arrays of dimensions M and N, respectively. It is necessary to rewrite the common elements of the first two arrays into the third array without repetitions.
+
+Task 3:
+Given a two-dimensional array of dimensions 5x5, filled with random numbers from the range from -100 to 100. Determine the sum of the array elements located between the minimum and maximum elements.

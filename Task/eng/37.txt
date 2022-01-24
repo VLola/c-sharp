@@ -1,0 +1,12 @@
+Project 37.
+
+Task 1:
+Write an application that will display the simplest geometric shapes specified by the user in the console.
+The user selects a shape and sets its position on the screen,
+as well as size and color using the menu.
+All user-defined shapes are displayed simultaneously on the screen.
+Shapes (rectangle, rhombus, triangle, trapezoid, polygon) are drawn with asterisks or other symbols.
+To implement the program, it is necessary to develop a class hierarchy (think about the possibility of abstraction).
+To store all user-defined shapes, create a Geometric Shapes Collection class with the Display All Shapes method.
+To display all the shapes with the specified method, you need to use the foreach statement,
+why in the class "Collection of geometric shapes" it is necessary to implement the appropriate interfaces.

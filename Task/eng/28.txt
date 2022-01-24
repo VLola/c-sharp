@@ -1,0 +1,39 @@
+Project 28.
+
+Task 1:
+Given positive integers A, B, C.
+The program should ask the user for the value of these numbers.
+A rectangle of size A*B contains as many squares as possible with side C.
+The squares do not overlap.
+Find the number of squares placed on the rectangle, as well as the area of ​​the unoccupied part of the rectangle.
+It is necessary to provide service messages in the event that
+if no squares with side C can be placed in a rectangle
+(for example, if the value of C is greater than the size of the sides of the rectangle).
+
+Task 2:
+The initial deposit in the bank is 10,000 UAH.
+Every month the amount of the deposit increases by P
+percent of the available amount
+(P is a real number, 0 < P < 25).
+The program must receive the value of P from the user.
+According to this P, determine in how many months the amount of the deposit will exceed UAH 11,000,
+and output the found number of months K (integer)
+and the final size of the contribution S (real number).
+
+Task 3:
+Given positive integers A and B (A < B).
+Output all integers from A to B inclusive;
+each number should be displayed on a new line;
+each number should be displayed the number of times,
+equal to its value (for example, the number 3 is displayed 3 times). 
+For example: if A = 3 and B = 7, then the program should generate the following output in the console:
+3 3 3
+4 4 4 4
+5 5 5 5 5
+6 6 6 6 6 6
+7 7 7 7 7 7 7
+
+Task 4:
+Given an integer N greater than 0, find the number
+obtained by reading the number N from right to left.
+For example, if the number 345 was entered, then the program should output the number 543.

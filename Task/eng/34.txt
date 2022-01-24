@@ -1,0 +1,15 @@
+Project 34.
+
+Task 1:
+Develop an abstract class Geometric Shape with Shape Area and Shape Perimeter fields.
+Develop child classes: Triangle, Square, Rhombus, Rectangle, Parallelogram, Trapezium,
+Circle, Ellipse.
+And implement properties that uniquely define the objects of these classes.
+Implement the Simple N Square interface, which has the properties:
+Height, Base, Angle Between Base and Adjacent Side, Number of Sides,
+Side lengths, Area, Perimeter.
+Implement a Composite Shape class that can consist of any number of Simple N Squares.
+For this class, define a method for finding the area of ​​a figure.
+Provide options for the impossibility of specifying a figure
+(negative side lengths are entered, or when creating a triangle object, there is a pair of sides,
+the sum of the lengths of which is less than the length of the third side, etc.)

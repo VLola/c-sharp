@@ -1,0 +1,13 @@
+Project 33.
+
+Task 1:
+Shapes app.
+
+Write an application that will display the simplest geometric shapes selected by the user in the console:
+"rectangle", "rhombus", "triangle", "trapezium", "polygon".
+From the menu, the user selects the shapes and selects the colors for each shape.
+Shapes are drawn with asterisks or other symbols.
+To implement the program, it is necessary to develop a hierarchy.
+classes (think about the possibility of abstraction).
+All user-defined shapes are stored in the Generic Shape object,
+which has a "display all selected shapes" method

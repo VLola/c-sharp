@@ -1,0 +1,6 @@
+Project 39.
+
+Task 1:
+Create a primitive English-Russian and Russian-English dictionary,
+containing pairs of words - the names of countries in Russian and English.
+The user should be able to choose the direction of the transfer and request a transfer.

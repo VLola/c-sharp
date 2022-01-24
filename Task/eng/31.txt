@@ -1,0 +1,6 @@
+Project 31.
+
+Task 1:
+Develop the application "7 wonders of the world", where each
+miracle will be represented by a separate class. Create an additional class containing the entry point.
+Divide the application into project files and use the namespace to make the classes interoperable.

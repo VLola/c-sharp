@@ -1,0 +1,37 @@
+Project 36.
+
+Task 1:
+Develop your own structural data type to store the integer coefficients A and B of the linear equation A×X + B×Y = 0.
+In the class, implement the static Parse() method,
+which takes a string with the values ​​of the coefficients,
+separated by comma or space.
+
+Task 2:
+Develop a method for solving a system of 2 linear equations:
+A1×X + B1×Y = 0
+A2×X + B2×Y = 0
+The method, using output parameters, should return the found solution or error,
+if no solution exists
+
+Task 3:
+Implement a class for storing a complex number.
+In it, overload all the necessary operators to successfully compile the following code snippet:
+Complexz = new Complex(1,1);
+Complexz1;
+z1 = z - (z * z * z - 1) / (3 * z * z);
+Console.WriteLine("z1 = {0}", z1);
+
+Task 4:
+Develop a Fraction class that represents a simple fraction.
+In the class, provide two fields: the numerator and denominator of the fraction.
+Overload the following operators: +,-,*,/,==,!=,<,>, true, and false.
+Arithmetic operations and comparison are performed in accordance with the rules for working with fractions.
+The true operator returns true if the fraction is correct (the numerator is less than the denominator),
+the false operator returns true if the fraction is not correct (the numerator is greater than the denominator).
+Overload the operators necessary to successfully compile the following code snippet:
+Fraction f = new Fraction(3, 4);
+int a = 10;
+Fraction f1 = f*a;
+Fraction f2 = a*f;
+double d = 1.5;
+Fraction f3 = f + d;

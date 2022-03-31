@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +87,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,14 +105,16 @@
     <None Include="Resources\shelf.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Books\Moya_novaya_maska.txt" />
+    <Content Include="Books\Nebytie.txt" />
+    <Content Include="Books\Nevesta_ponevole.txt" />
+    <Content Include="Books\Pikantnaya_oshibka.txt" />
     <Content Include="Resources\book.jpg" />
     <Content Include="Resources\cover1.jpg" />
     <Content Include="Resources\cover2.jpg" />
     <Content Include="Resources\cover3.jpg" />
     <Content Include="Resources\cover4.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Books\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

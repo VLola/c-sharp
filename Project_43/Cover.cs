@@ -19,6 +19,12 @@ namespace Project_43
         public int page { get; set; }
         public ArrayList list;
 
+        Form1 form;
+        public Cover(Form1 form)
+        {
+            this.form = form;
+        }
+
         public int NewCover(Control control, int temp)
         {
             if (temp < 530)
@@ -50,16 +56,18 @@ namespace Project_43
                 return temp;
             }
         }
-        public void NewBox()
+        private void NewBox()
         {
             box = new PictureBox();
             box.Image = NewImage();
             box.Size = new Size(box.Image.Width, box.Image.Height);
             box.Click += new EventHandler(button2_Click);
+            box.MouseMove += new MouseEventHandler(box_MouseMove);
+            box.MouseLeave += new EventHandler(box_MouseLeave);
             name = NewName();
-            page = 1;
+            page = 0;
         }
-        public static Image NewImage()
+        private static Image NewImage()
         {
             int number = new Random().Next(1, 5);
             if (number == 1) return Properties.Resources.cover1;
@@ -68,14 +76,26 @@ namespace Project_43
             else return Properties.Resources.cover4;
         }
 
-        public static string NewName()
+        private static string NewName()
         {
-            return "book1";
+            int number = new Random().Next(1, 5);
+            if (number == 1) return "Moya_novaya_maska";
+            else if (number == 2) return "Nebytie";
+            else if (number == 3) return "Nevesta_ponevole";
+            else return "Pikantnaya_oshibka";
         }
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
             form2.ShowDialog();
+        }
+        private void box_MouseMove(object sender, EventArgs e)
+        {
+            form.Text = name;
+        }
+        private void box_MouseLeave(object sender, EventArgs e)
+        {
+            form.Text = "";
         }
     }
 }

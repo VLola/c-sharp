@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Collections;
 
 namespace Project_43
 {
-    class Cover
+    public class Cover
     {
         public PictureBox box;
+        public string name { get; set; }
+        public int page { get; set; }
+        public ArrayList list;
+
         public int NewCover(Control control, int temp)
         {
             if (temp < 530)
@@ -49,17 +55,27 @@ namespace Project_43
             box = new PictureBox();
             box.Image = NewImage();
             box.Size = new Size(box.Image.Width, box.Image.Height);
+            box.Click += new EventHandler(button2_Click);
+            name = NewName();
+            page = 1;
         }
         public static Image NewImage()
         {
-            if (Rnd() == 1) return Properties.Resources.cover1;
-            else if (Rnd() == 2) return Properties.Resources.cover2;
-            else if (Rnd() == 3) return Properties.Resources.cover3;
+            int number = new Random().Next(1, 5);
+            if (number == 1) return Properties.Resources.cover1;
+            else if (number == 2) return Properties.Resources.cover2;
+            else if (number == 3) return Properties.Resources.cover3;
             else return Properties.Resources.cover4;
         }
-        public static int Rnd()
+
+        public static string NewName()
         {
-            return new Random().Next(1, 5);
+            return "book1";
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(this);
+            form2.ShowDialog();
         }
     }
 }

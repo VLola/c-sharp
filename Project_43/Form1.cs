@@ -12,6 +12,7 @@ namespace Project_43
 {
     public partial class Form1 : Form
     {
+        public Cover cover;
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Project_43
         public int temp = 50;
         private void button1_Click(object sender, EventArgs e)
         {
-            Cover cover = new Cover();
+            cover = new Cover();
             temp = cover.NewCover(this, temp);
         }
         

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Project_46.Forms.Controls
 {
@@ -6,17 +7,15 @@ namespace Project_46.Forms.Controls
     {
         public NewFile(Form1 form)
         {
-            string text = "new 1";
-            Text = text;
+            form.newTabControl.count++;
+            Text = "new" + form.newTabControl.count;
             Size = form.ClientSize;
-
-            Controls.Add(new NewRichTextBox() { 
-                Multiline = true, 
-                WordWrap = false, 
-                Width = Width - 10, 
-                Height = Height - 30, 
-                SelectionStart = Text.Length 
-            }) ;
+            Controls.Add(new NewRichTextBox() {
+                Multiline = true,
+                WordWrap = false,
+                Width = Width - 10,
+                Height = Height - 55,
+            });
         }
     }
     

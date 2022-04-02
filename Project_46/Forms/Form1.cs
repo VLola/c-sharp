@@ -13,18 +13,17 @@ namespace Project_46
 {
     public partial class Form1 : Form
     {
-
+        public NewTabControl newTabControl = new NewTabControl();
         public Form1()
         {
             InitializeComponent();
+            newTabControl.Size = ClientSize;
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabControl tabControl = new TabControl();
-            tabControl.Size = ClientSize;
-            tabControl.Controls.Add(new NewFile(this));
-            Controls.Add(tabControl);
+            newTabControl.Controls.Add(new NewFile(this));
+            Controls.Add(newTabControl);
         }
 
     }

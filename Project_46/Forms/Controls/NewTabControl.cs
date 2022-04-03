@@ -11,7 +11,8 @@ namespace Project_46.Forms.Controls
     public class NewTabControl : TabControl
     {
         public int count { get; set; }
-        public NewTabControl(){
+        public NewTabControl()
+        {
             count = 0;
             Location = new Point(0, 24);
         }

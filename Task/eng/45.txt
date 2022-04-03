@@ -1,0 +1,21 @@
+Project 45.
+
+Write your provider-contacts. The application should display a list of contacts. Should be functional:
+- Adding a contact
+- Deleting a contact
+- Search by name/surname/patronymic/operator/date added
+- Sort by first name/last name/middle name/operator/date added
+- When you click on the card - a window with more detailed information should open
+
+
+The card consists of:
+- Name *
+- Surname
+- Middle name
+- Date of Birth
+- Phone number (1*-10) with operator auto-detection
+- Address (country / city / street / house / apartment)
+- Machine (make / model / reg number)
+- Company (name / position)
+
+* required fields

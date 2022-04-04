@@ -1,18 +1,58 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Project_46.Forms.Controls
 {
-    class NewRichTextBox: RichTextBox
+    public class NewRichTextBox: RichTextBox
     {
-        public NewRichTextBox()
+        public SaveFileDialog saveFileDialog;
+        public string path = "";
+        public string name;
+        public NewRichTextBox(string name ,string path, SaveFileDialog saveFileDialog)
         {
+            this.saveFileDialog = saveFileDialog;
+            this.name = name;
+            if (path != "")
+            {
+                this.path = path;
+                Text = File.ReadAllText(path);
+            }
             TextChanged += txb_TextChanged;
         }
         private void txb_TextChanged(object sender, EventArgs e)
         {
             SelectionStart = Text.Length;
             ScrollToCaret();
+        }
+        public void Save()
+        {
+            if(Text != "")
+            {
+                if (path != "")
+                {
+                    if (Text != File.ReadAllText(path))
+                    {
+                        File.WriteAllText(path, Text);
+                    }
+                }
+                else SaveAs();
+            }
+        }
+        public void SaveAs()
+        {
+            if(Text != "")
+            {
+                saveFileDialog.FileName = name;
+                saveFileDialog.ShowDialog();
+                string new_path = saveFileDialog.FileName;
+                if(new_path != "")
+                {
+                    path = new_path;
+                    File.WriteAllText(new_path, Text);
+                }
+                saveFileDialog.Reset();
+            }
         }
     }
 }

@@ -6,8 +6,8 @@ namespace Project_46
 {
     public partial class Form1 : Form
     {
-        public SaveFileDialog saveFileDialog = new SaveFileDialog();
-        public NewTabControl newTabControl = new NewTabControl();
+        public static SaveFileDialog saveFileDialog = new SaveFileDialog();
+        public NewTabControl newTabControl = new NewTabControl(saveFileDialog);
         public Form1()
         {
             InitializeComponent();
@@ -16,6 +16,18 @@ namespace Project_46
 
             newToolStripMenuItem.Click += new EventHandler(newToolStripMenuItem_Click);
             saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.NewPathFile);
+            newTabControl.Selecting += tabControl1_Selecting;
+        }
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            TabPage tabPage = newTabControl.SelectedTab;
+            foreach (NewTabPage it in newTabControl.TabPages)
+            {
+                if (it == tabPage)
+                {
+                    Text = it.newRichTextBox.path;
+                }
+            }
         }
         private void NewPathFile(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -27,7 +39,8 @@ namespace Project_46
             string path = openFileDialog1.FileName;
             Text = path;
             string name = openFileDialog1.SafeFileName;
-            AddPage(name, path);
+
+            AddPage(newTabControl, saveFileDialog, name, path);
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,11 +54,11 @@ namespace Project_46
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddPage("new " + (newTabControl.TabPages.Count + 1).ToString(), "");
+            AddPage(newTabControl, saveFileDialog, "new", "");
         }
-        private void AddPage(string name, string path)
+        private void AddPage(NewTabControl newTabControl, SaveFileDialog saveFileDialog, string name, string path)
         {
-            newTabControl.TabPages.Add(new NewTabPage(name, path, saveFileDialog));
+            newTabControl.TabPages.Add(new NewTabPage(newTabControl, saveFileDialog, name, path));
         }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,5 +89,6 @@ namespace Project_46
                 }
             }
         }
+
     }
 }

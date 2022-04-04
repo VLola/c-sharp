@@ -18,12 +18,6 @@ namespace Project_46.Forms.Controls
                 this.path = path;
                 Text = File.ReadAllText(path);
             }
-            TextChanged += txb_TextChanged;
-        }
-        private void txb_TextChanged(object sender, EventArgs e)
-        {
-            SelectionStart = Text.Length;
-            ScrollToCaret();
         }
         public void Save()
         {

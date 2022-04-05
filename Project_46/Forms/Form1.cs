@@ -1,94 +1,157 @@
 ﻿using Project_46.Forms.Controls;
 using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Project_46
 {
     public partial class Form1 : Form
     {
-        public static SaveFileDialog saveFileDialog = new SaveFileDialog();
-        public NewTabControl newTabControl = new NewTabControl(saveFileDialog);
+        public SaveFileDialog saveFileDialog = new SaveFileDialog();
+        public OpenFileDialog openFileDialog = new OpenFileDialog();
+        public NewTabControl newTabControl = new NewTabControl();
+        public ToolStrip toolStrip = new ToolStrip();
+        private NewMenu newMenu;
         public Form1()
         {
             InitializeComponent();
-            newTabControl.Size = ClientSize;
-            Controls.Add(newTabControl);
+            AddToolStrip();
+            AddMenu();
+            AddNewTabControl();
 
-            newToolStripMenuItem.Click += new EventHandler(newToolStripMenuItem_Click);
-            saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.NewPathFile);
-            newTabControl.Selecting += tabControl1_Selecting;
+            saveFileDialog.FileOk += new CancelEventHandler(NewPathFile);
         }
-        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        private void AddMenu()
         {
-            TabPage tabPage = newTabControl.SelectedTab;
-            foreach (NewTabPage it in newTabControl.TabPages)
-            {
-                if (it == tabPage)
-                {
-                    Text = it.newRichTextBox.path;
-                }
-            }
+            newMenu = new NewMenu(this);
+            newMenu.New.Click += new EventHandler(New);
+            newMenu.Open.Click += new EventHandler(Open);
+            newMenu.Close.Click += new EventHandler(Close);
+            newMenu.CloseAll.Click += new EventHandler(CloseAll);
+            newMenu.Save.Click += new EventHandler(Save);
+            newMenu.SaveAll.Click += new EventHandler(SaveAll);
+            newMenu.SaveAs.Click += new EventHandler(SaveAs);
         }
-        private void NewPathFile(object sender, System.ComponentModel.CancelEventArgs e)
+        private void AddToolStrip()
+        {
+            toolStrip.Items.Add("", Properties.Resources.New, New);
+            toolStrip.Items.Add("", Properties.Resources.Open, Open);
+            toolStrip.Items.Add("", Properties.Resources.Save, Save);
+            toolStrip.Items.Add("", Properties.Resources.SaveAll, SaveAll);
+            toolStrip.Items.Add("", Properties.Resources.Close, Close);
+            toolStrip.Items.Add("", Properties.Resources.CloseAll, CloseAll);
+            //toolStrip.Items.Add("", Properties.Resources.Print, Open);
+            Controls.Add(toolStrip);
+        }
+        private void AddNewTabControl()
+        {
+            newTabControl.Size = ClientSize;
+            newTabControl.Selecting += Selecting;
+            Controls.Add(newTabControl);
+        }
+        private void Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (newTabControl.TabPages.Count > 0)
+            {
+                NewTabPage tabPage = (NewTabPage)e.TabPage;
+                if (tabPage.newRichTextBox.path == "") Text = tabPage.Text + " - Notepad++";
+                else Text = tabPage.newRichTextBox.path;
+            }
+            else Text = "Notepad++";
+        }
+        private NewTabPage SelectTabPage()
+        {
+            return (NewTabPage)newTabControl.SelectedTab;
+        }
+        private void NewPathFile(object sender, CancelEventArgs e)
         {
             Text = saveFileDialog.FileName;
         }
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Open(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            string path = openFileDialog1.FileName;
-            Text = path;
-            string name = openFileDialog1.SafeFileName;
-
-            AddPage(newTabControl, saveFileDialog, name, path);
+            openFileDialog.ShowDialog();
+            string path = "";
+            path += openFileDialog.FileName;
+            if (path != "")
+            {
+                Text = path;
+                string name = openFileDialog.SafeFileName;
+                AddPage(newTabControl, name, path);
+            }
+            openFileDialog.Reset();
         }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
             newTabControl.TabPages.Remove(newTabControl.SelectedTab);
         }
-
-        private void closeAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseAll(object sender, EventArgs e)
         {
             newTabControl.TabPages.Clear();
         }
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void New(object sender, EventArgs e)
         {
-            AddPage(newTabControl, saveFileDialog, "new", "");
+            AddPage(newTabControl, "new", "");
         }
-        private void AddPage(NewTabControl newTabControl, SaveFileDialog saveFileDialog, string name, string path)
+        private void AddPage(NewTabControl newTabControl, string name, string path)
         {
-            newTabControl.TabPages.Add(new NewTabPage(newTabControl, saveFileDialog, name, path));
+            NewTabPage newTabPage = new NewTabPage(newTabControl, name, path);
+            newTabControl.TabPages.Add(newTabPage);
+            newTabControl.SelectedTab = newTabPage;
+            if (path == "") Text = newTabPage.Text + " - Notepad++";
         }
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Save(object sender, EventArgs e)
         {
-            TabPage tabPage = newTabControl.SelectedTab;
-            foreach(NewTabPage it in newTabControl.TabPages)
+            NewTabPage tabPage = SelectTabPage();
+            if (tabPage.newRichTextBox.Text != "")
             {
-                if(it == tabPage)
+                if (tabPage.newRichTextBox.path != "")
                 {
-                    it.newRichTextBox.Save();
+                    if (tabPage.newRichTextBox.Text != File.ReadAllText(tabPage.newRichTextBox.path))
+                    {
+                        File.WriteAllText(tabPage.newRichTextBox.path, tabPage.newRichTextBox.Text);
+                    }
                 }
+                else SaveAs(sender, e);
             }
         }
-        private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAll(object sender, EventArgs e)
         {
             foreach (NewTabPage it in newTabControl.TabPages)
             {
-                it.newRichTextBox.Save();
-            }
-        }
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TabPage tabPage = newTabControl.SelectedTab;
-            foreach (NewTabPage it in newTabControl.TabPages)
-            {
-                if (it == tabPage)
+                if (it.newRichTextBox.Text != "")
                 {
-                    it.newRichTextBox.SaveAs();
+                    if (it.newRichTextBox.path != "")
+                    {
+                        if (it.newRichTextBox.Text != File.ReadAllText(it.newRichTextBox.path))
+                        {
+                            File.WriteAllText(it.newRichTextBox.path, it.newRichTextBox.Text);
+                        }
+                    }
                 }
             }
         }
+        private void SaveAs(object sender, EventArgs e)
+        {
+            NewTabPage tabPage = SelectTabPage();
 
+            if (tabPage.newRichTextBox.Text != "")
+            {
+                saveFileDialog.FileName = tabPage.newRichTextBox.Name;
+                saveFileDialog.ShowDialog();
+                string new_path = saveFileDialog.FileName;
+                if (new_path != "")
+                {
+                    tabPage.newRichTextBox.path = new_path;
+                    File.WriteAllText(new_path, tabPage.newRichTextBox.Text);
+                    // Rename TabPage
+                    string[] array = new_path.Split('\\');
+                    tabPage.Text = array[array.Length - 1];
+                }
+                saveFileDialog.Reset();
+            }
+        }
+        
     }
 }

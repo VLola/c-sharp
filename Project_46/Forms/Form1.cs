@@ -111,7 +111,7 @@ namespace Project_46
         }
         private void Close(object sender, EventArgs e)
         {
-            newTabControl.TabPages.Remove(newTabControl.SelectedTab);
+            if (newTabControl.TabPages.Count > 0) newTabControl.TabPages.Remove(newTabControl.SelectedTab);
         }
         private void CloseAll(object sender, EventArgs e)
         {

@@ -23,6 +23,7 @@ namespace Project_46
 
             saveFileDialog.FileOk += new CancelEventHandler(NewPathFile);
         }
+
         private void AddMenu()
         {
             newMenu = new NewMenu(this);
@@ -33,7 +34,26 @@ namespace Project_46
             newMenu.Save.Click += new EventHandler(Save);
             newMenu.SaveAll.Click += new EventHandler(SaveAll);
             newMenu.SaveAs.Click += new EventHandler(SaveAs);
+
+            newMenu.Undo.Click += new EventHandler(Undo);
+            newMenu.Redo.Click += new EventHandler(Redo);
+            newMenu.Cut.Click += new EventHandler(Cut);
+            newMenu.Copy.Click += new EventHandler(Copy);
+            newMenu.Paste.Click += new EventHandler(Paste);
+            newMenu.Delete.Click += new EventHandler(Delete);
+            newMenu.SelectAll.Click += new EventHandler(SelectAll);
         }
+        private void Print(object sender, EventArgs e) {
+            // later
+        }
+        private void Undo(object sender, EventArgs e) { SendKeys.Send("^z"); }
+        private void Redo(object sender, EventArgs e) { SendKeys.Send("^y"); }
+        private void Cut(object sender, EventArgs e) { SendKeys.Send("^x"); }
+        private void Copy(object sender, EventArgs e) { SendKeys.Send("^c"); }
+        private void Paste(object sender, EventArgs e) { SendKeys.Send("^v"); }
+        private void Delete(object sender, EventArgs e) { SendKeys.Send("{DELETE}"); }
+        private void SelectAll(object sender, EventArgs e) { SendKeys.Send("^a"); }
+
         private void AddToolStrip()
         {
             toolStrip.Items.Add("", Properties.Resources.New, New);
@@ -42,7 +62,14 @@ namespace Project_46
             toolStrip.Items.Add("", Properties.Resources.SaveAll, SaveAll);
             toolStrip.Items.Add("", Properties.Resources.Close, Close);
             toolStrip.Items.Add("", Properties.Resources.CloseAll, CloseAll);
-            //toolStrip.Items.Add("", Properties.Resources.Print, Open);
+            toolStrip.Items.Add("", Properties.Resources.Print, Print);
+            toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add("", Properties.Resources.Cut, Cut);
+            toolStrip.Items.Add("", Properties.Resources.Copy, Copy);
+            toolStrip.Items.Add("", Properties.Resources.Paste, Paste);
+            toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add("", Properties.Resources.Undo, Undo);
+            toolStrip.Items.Add("", Properties.Resources.Redo, Redo);
             Controls.Add(toolStrip);
         }
         private void AddNewTabControl()

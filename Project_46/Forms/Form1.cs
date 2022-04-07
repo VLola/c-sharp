@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -43,9 +44,8 @@ namespace Project_46
             newMenu.Delete.Click += new EventHandler(Delete);
             newMenu.SelectAll.Click += new EventHandler(SelectAll);
         }
-        private void Print(object sender, EventArgs e) {
-            // later
-        }
+        
+        
         private void Undo(object sender, EventArgs e) { SendKeys.Send("^z"); }
         private void Redo(object sender, EventArgs e) { SendKeys.Send("^y"); }
         private void Cut(object sender, EventArgs e) { SendKeys.Send("^x"); }
@@ -95,6 +95,10 @@ namespace Project_46
         private void NewPathFile(object sender, CancelEventArgs e)
         {
             Text = saveFileDialog.FileName;
+        }
+        private void Print(object sender, EventArgs e)
+        {
+            new NewPrint(newTabControl);
         }
         private void Open(object sender, EventArgs e)
         {
@@ -179,6 +183,7 @@ namespace Project_46
                 saveFileDialog.Reset();
             }
         }
+
         
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Forms\Controls\NewMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\Controls\NewPrint.cs" />
     <Compile Include="Forms\Controls\NewRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

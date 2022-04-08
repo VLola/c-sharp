@@ -49,7 +49,7 @@ namespace Project_46.Forms.Controls
                 Copy = new ToolStripMenuItem("Copy"),
                 Paste = new ToolStripMenuItem("Paste"),
                 Delete = new ToolStripMenuItem("Delete"),
-                SelectAll = new ToolStripMenuItem("SelectAll")
+                SelectAll = new ToolStripMenuItem("Select All")
             });
 
             form.Controls.Add(this);

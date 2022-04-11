@@ -1,4 +1,4 @@
-﻿using Project_46.Forms.Controls;
+﻿using Project_47.Forms.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +18,12 @@ namespace Project_47
         public Form1()
         {
             InitializeComponent();
+            AddMenu();
         }
+        private void AddMenu()
+        {
+            newMenu = new NewMenu(this);
+        }
+
     }
 }

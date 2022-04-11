@@ -17,7 +17,7 @@ namespace Project_48.Forms.Control
             {
                 User reg = new User(email, new Crypt().Generate(pass));
                 connection.Insert(reg);
-            } 
+            }
         }
     }
 }

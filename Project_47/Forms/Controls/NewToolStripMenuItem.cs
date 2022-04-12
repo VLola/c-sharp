@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_47.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,14 @@ namespace Project_47.Forms.Controls
             BackColor = Color.White;
             Text = text;
             Image = image;
+        }
+        public NewToolStripMenuItem(Image image)
+        {
+            BackColor = Color.White;
+            Image = image;
+            AutoSize = false;
+            ImageScaling = ToolStripItemImageScaling.None;
+            Size = new Size(23, 22);
         }
     }
 }

@@ -55,6 +55,9 @@
     <Compile Include="Forms\Controls\NewPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\Controls\NewRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Controls\NewToolStripItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -143,6 +146,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TextOpenDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Insert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReduceTheSize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseTheSize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineSpacing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paragraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subscripr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Underlined.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Align.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Centre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrossedOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseIndent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseIndent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@ namespace Project_47.Forms.Controls
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
             ImageAlign = ContentAlignment.TopCenter;
-            Size = new Size(46, 70);
+            Size = new Size(46, 60);
             TextAlign = ContentAlignment.BottomCenter;
         }
     }

@@ -7,24 +7,25 @@ namespace Project_47.Forms.Controls
     public class GroupBoxInsert: GroupBox
     {
         private MenuStrip Button;
-        private ToolStripMenuItem ButtonImage;
 
         private NewButton ButtonPaint;
         private NewButton ButtonDate;
         private NewButton ButtonObject;
 
-        private MenuStrip ButtonList;
-        private ToolStripMenuItem List;
+        private ToolStripSplitButton List;
         private NewToolStripMenuItem Image;
         private NewToolStripMenuItem ChangeImage;
         private NewToolStripMenuItem ResizeImage;
         public GroupBoxInsert()
         {
-            Button = new MenuStrip() { BackColor = Color.White, ImageScalingSize = new Size(36, 36), AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(60, 45) };
-            Button.Items.Add(ButtonImage = new ToolStripMenuItem(Resources.Image));
-
-            ButtonList = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 55), Size = new Size(60, 24) };
-            ButtonList.Items.Add(List = new ToolStripMenuItem("Image"));
+            Button = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(70, 60) };
+            Button.Items.Add(List = new ToolStripSplitButton("Image", Resources.Image)
+            {
+                TextAlign = ContentAlignment.BottomCenter
+                ,ImageAlign = ContentAlignment.TopCenter
+                ,ImageScaling = ToolStripItemImageScaling.None
+                ,TextImageRelation = TextImageRelation.Overlay
+            });
 
             List.DropDownItems.AddRange(new ToolStripItem[] {
                 Image = new NewToolStripMenuItem("Image", Resources.Image_20x20)
@@ -32,10 +33,9 @@ namespace Project_47.Forms.Controls
                 ,ResizeImage = new NewToolStripMenuItem("Resize image", Resources.ChangeSizeImage)
             });
 
-
-            ButtonPaint = new NewButton("Paint", Resources.Paint) { Location = new Point(70, 8) };
-            ButtonDate = new NewButton("Date", Resources.Date) { Location = new Point(115, 8) };
-            ButtonObject = new NewButton("Object", Resources.Object) { Location = new Point(160, 8) };
+            ButtonPaint = new NewButton("Paint", Resources.Paint) { Location = new Point(80, 8) };
+            ButtonDate = new NewButton("Date", Resources.Date) { Location = new Point(125, 8) };
+            ButtonObject = new NewButton("Object", Resources.Object) { Location = new Point(170, 8) };
 
             Label label1 = new Label();
             label1.Text = "Insert";
@@ -45,7 +45,6 @@ namespace Project_47.Forms.Controls
             Location = new Point(510, 0);
             Size = new Size(220, 105);
             Controls.Add(Button);
-            Controls.Add(ButtonList);
             Controls.Add(ButtonPaint);
             Controls.Add(ButtonDate);
             Controls.Add(ButtonObject);

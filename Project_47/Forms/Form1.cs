@@ -26,8 +26,6 @@ namespace Project_47
             newMenu = new NewMenu(this);
             richTextBox = new NewRichTextBox();
             Controls.Add(richTextBox);
-
-            
         }
 
     }

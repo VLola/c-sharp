@@ -11,46 +11,44 @@ namespace Project_47.Forms.Controls
 {
     public class GroupBoxParagraph: GroupBox
     {
-        private MenuStrip Buttons5;
-        private NewToolStripMenuItem Button9;
-        private NewToolStripMenuItem Button10;
-        private NewToolStripMenuItem Button11;
-        private NewToolStripMenuItem Button12;
-        private NewToolStripMenuItem Button13;
+        private MenuStrip TopButtons;
+        private NewToolStripMenuItem DecreaseIndent;
+        private NewToolStripMenuItem IncreaseIndent;
+        private ToolStripSplitButton StartList;
+        private NewToolStripMenuItem LineSpacing;
 
-        private MenuStrip Buttons6;
-        private NewToolStripMenuItem Button14;
-        private NewToolStripMenuItem Button15;
-        private NewToolStripMenuItem Button16;
-        private NewToolStripMenuItem Button17;
-        private NewToolStripMenuItem Button18;
+        private MenuStrip BottomButtons;
+        private NewToolStripMenuItem LeftButton;
+        private NewToolStripMenuItem CentreButton;
+        private NewToolStripMenuItem RightButton;
+        private NewToolStripMenuItem AlignButton;
+        private NewToolStripMenuItem ParagraphButton;
         public GroupBoxParagraph()
         {
-            Buttons5 = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 18), Width = 125 };
-            Buttons5.Items.Add(Button9 = new NewToolStripMenuItem(Resources.DecreaseIndent));
-            Buttons5.Items.Add(Button10 = new NewToolStripMenuItem(Resources.IncreaseIndent));
-            Buttons5.Items.Add(Button11 = new NewToolStripMenuItem(Resources.StartList) { Margin = new Padding(5, 0, 0, 0) });
-            Buttons5.Items.Add(Button12 = new NewToolStripMenuItem(Resources.ArrowDown) { Size = new Size(10, 22) });
-            Buttons5.Items.Add(Button13 = new NewToolStripMenuItem(Resources.LineSpacing) { Margin = new Padding(5, 0, 0, 0) });
+            TopButtons = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 18), Width = 125 };
+            TopButtons.Items.Add(DecreaseIndent = new NewToolStripMenuItem(Resources.DecreaseIndent));
+            TopButtons.Items.Add(IncreaseIndent = new NewToolStripMenuItem(Resources.IncreaseIndent));
+            TopButtons.Items.Add(StartList = new ToolStripSplitButton(Resources.StartList) { AutoSize = false, Size = new Size(36, 22) });
+            TopButtons.Items.Add(LineSpacing = new NewToolStripMenuItem(Resources.LineSpacing));
 
-            Buttons6 = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 50), Width = 125 };
-            Buttons6.Items.Add(Button14 = new NewToolStripMenuItem(Resources.Left));
-            Buttons6.Items.Add(Button15 = new NewToolStripMenuItem(Resources.Centre));
-            Buttons6.Items.Add(Button16 = new NewToolStripMenuItem(Resources.Right));
-            Buttons6.Items.Add(Button17 = new NewToolStripMenuItem(Resources.Align));
-            Buttons6.Items.Add(Button18 = new NewToolStripMenuItem(Resources.Paragraph));
+            BottomButtons = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 50), Width = 125 };
+            BottomButtons.Items.Add(LeftButton = new NewToolStripMenuItem(Resources.Left));
+            BottomButtons.Items.Add(CentreButton = new NewToolStripMenuItem(Resources.Centre));
+            BottomButtons.Items.Add(RightButton = new NewToolStripMenuItem(Resources.Right));
+            BottomButtons.Items.Add(AlignButton = new NewToolStripMenuItem(Resources.Align));
+            BottomButtons.Items.Add(ParagraphButton = new NewToolStripMenuItem(Resources.Paragraph));
 
-            Label label3 = new Label();
-            label3.Text = "Paragraph";
-            label3.Location = new Point(40, 80);
-            label3.ForeColor = Color.Gray;
-            label3.Width = 60;
+            Label label = new Label();
+            label.Text = "Paragraph";
+            label.Location = new Point(40, 80);
+            label.ForeColor = Color.Gray;
+            label.Width = 60;
 
             Location = new Point(388, 0);
             Size = new Size(130, 105);
-            Controls.Add(Buttons5);
-            Controls.Add(Buttons6);
-            Controls.Add(label3);
+            Controls.Add(TopButtons);
+            Controls.Add(BottomButtons);
+            Controls.Add(label);
         }
     }
 }

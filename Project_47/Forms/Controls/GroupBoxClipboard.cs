@@ -11,10 +11,8 @@ namespace Project_47.Forms.Controls
 {
     public class GroupBoxClipboard: GroupBox
     {
-        private MenuStrip Button;
-        private ToolStripMenuItem ButtonInsert;
         private MenuStrip Home;
-        private ToolStripMenuItem HomeInsert;
+        private ToolStripSplitButton HomeInsert;
         private ToolStripMenuItem Insert;
         private ToolStripMenuItem SpecialInsert;
 
@@ -23,11 +21,14 @@ namespace Project_47.Forms.Controls
         private NewToolStripMenuItem Copy;
         public GroupBoxClipboard()
         {
-            Button = new MenuStrip() { BackColor = Color.White, ImageScalingSize = new Size(36, 36), AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(60, 45) };
-            Button.Items.Add(ButtonInsert = new ToolStripMenuItem(Resources.Insert));
-
-            Home = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 55), Size = new Size(60, 24) };
-            Home.Items.Add(HomeInsert = new ToolStripMenuItem("Insert"));
+            Home = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(60, 60) };
+            Home.Items.Add(HomeInsert = new ToolStripSplitButton("Insert", Resources.Insert)
+            {
+                TextAlign = ContentAlignment.BottomCenter
+                ,ImageAlign = ContentAlignment.TopCenter
+                ,ImageScaling = ToolStripItemImageScaling.None
+                ,TextImageRelation = TextImageRelation.Overlay
+            });
 
             HomeInsert.DropDownItems.AddRange(new ToolStripItem[] {
                 Insert = new NewToolStripMenuItem("Insert", Resources.Insert_20x20)
@@ -48,7 +49,6 @@ namespace Project_47.Forms.Controls
             Location = new Point(0, 0);
             Size = new Size(150, 105);
             Controls.Add(Home);
-            Controls.Add(Button);
             Controls.Add(TextChange);
             Controls.Add(label);
         }

@@ -49,10 +49,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Controls\NewMenu.cs">
+    <Compile Include="Forms\Controls\GroupBoxClipboard.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Controls\NewPanel.cs">
+    <Compile Include="Forms\Controls\GroupBoxEditing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxFont.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxInsert.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxParagraph.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxParameters.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxScale.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GroupBoxShowOrHide.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\NewButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\NewMenu.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\Controls\NewRichTextBox.cs">
@@ -65,6 +89,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\Controls\NewToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\PanelMain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\PanelView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolStripMenuItemUnits.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolStripMenuItemWordWrap.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\Form1.cs">
@@ -206,6 +242,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Object.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Replacement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeSizeImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image_20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Insert_20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpecialInsert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Increase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Units.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WordWrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decrease.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,7 +30,9 @@ namespace Project_47.Forms.Controls
         private ToolStripMenuItem PlainText;
         private ToolStripMenuItem Save_As;
 
-        private Panel panel1;
+        private PanelMain panelMain;
+        private PanelView panelView;
+
         private ToolStripMenuItem HomeToolStripMenuItem;
         private ToolStripMenuItem ViewToolStripMenuItem;
         public NewMenu(Form1 form)
@@ -72,22 +74,28 @@ namespace Project_47.Forms.Controls
                 ,Preview = new NewToolStripMenuItem("Preview", Resources.Preview)
             });
 
-            panel1 = new NewPanel();
-            panel1.Visible = true;
+            panelMain = new PanelMain();
+            panelMain.Visible = true;
+
+            panelView = new PanelView();
+            panelView.Visible = false;
 
             HomeToolStripMenuItem.Click += new EventHandler(Home);
             ViewToolStripMenuItem.Click += new EventHandler(View);
             form.Controls.Add(this);
-            form.Controls.Add(panel1);
+            form.Controls.Add(panelMain);
+            form.Controls.Add(panelView);
         }
         private void Home(object sender, EventArgs e)
         {
-            panel1.Visible = true;
+            panelMain.Visible = true;
+            panelView.Visible = false;
         }
 
         private void View(object sender, EventArgs e)
         {
-            panel1.Visible = false;
+            panelMain.Visible = false;
+            panelView.Visible = true;
         }
     }
 }

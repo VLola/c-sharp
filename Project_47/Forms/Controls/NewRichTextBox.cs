@@ -10,13 +10,23 @@ namespace Project_47.Forms.Controls
 {
     public class NewRichTextBox: RichTextBox
     {
-        public NewRichTextBox()
+        NewToolStripContainer newToolStripContainer;
+        public NewRichTextBox(NewToolStripContainer newToolStripContainer)
         {
-            Location = new Point(50, 150);
-            Size = new Size(700, 300);
+            this.newToolStripContainer = newToolStripContainer;
+            Location = new Point(3, 3);
+            Size = new Size(1030, 359);
             Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
-            BorderStyle = BorderStyle.None; 
+            BorderStyle = BorderStyle.Fixed3D; 
             Multiline = true;
+            BackColor = Color.White;
+
+            MouseWheel += NewToolStripContainer_MouseWheel;
+        }
+
+        private void NewToolStripContainer_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if(ModifierKeys == Keys.Control) newToolStripContainer.Padding = new Padding(newToolStripContainer.Padding.Left - e.Delta / 10, 0, newToolStripContainer.Padding.Left - e.Delta / 10, 0);
         }
     }
 }

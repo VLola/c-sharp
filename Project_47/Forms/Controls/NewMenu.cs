@@ -8,33 +8,33 @@ namespace Project_47.Forms.Controls
 {
     public class NewMenu:MenuStrip
     {
-        private ToolStripMenuItem File;
+        public ToolStripMenuItem File;
 
-        private ToolStripMenuItem Create;
-        private ToolStripMenuItem Open;
-        private ToolStripMenuItem Save;
-        private ToolStripMenuItem PrintPageSettings;
-        private ToolStripMenuItem SendByEmail;
-        private ToolStripMenuItem AboutTheProgram;
-        private ToolStripMenuItem Exit;
+        public ToolStripMenuItem Create;
+        public ToolStripMenuItem Open;
+        public ToolStripMenuItem Save;
+        public ToolStripMenuItem PrintPageSettings;
+        public ToolStripMenuItem SendByEmail;
+        public ToolStripMenuItem AboutTheProgram;
+        public ToolStripMenuItem Exit;
         // Print
-        private ToolStripMenuItem Print;
-        private ToolStripMenuItem RegularPrinting;
-        private ToolStripMenuItem FastPrinting;
-        private ToolStripMenuItem Preview;
+        public ToolStripMenuItem Print;
+        public ToolStripMenuItem RegularPrinting;
+        public ToolStripMenuItem FastPrinting;
+        public ToolStripMenuItem Preview;
         // Save As
-        private ToolStripMenuItem SaveAs;
-        private ToolStripMenuItem RTF_document;
-        private ToolStripMenuItem OfficeOpenXML_document;
-        private ToolStripMenuItem TextOpenDocument;
-        private ToolStripMenuItem PlainText;
-        private ToolStripMenuItem Save_As;
+        public ToolStripMenuItem SaveAs;
+        public ToolStripMenuItem RTF_document;
+        public ToolStripMenuItem OfficeOpenXML_document;
+        public ToolStripMenuItem TextOpenDocument;
+        public ToolStripMenuItem PlainText;
+        public ToolStripMenuItem Save_As;
 
-        private PanelMain panelMain;
-        private PanelView panelView;
+        public PanelMain panelMain;
+        public PanelView panelView;
 
-        private ToolStripMenuItem HomeToolStripMenuItem;
-        private ToolStripMenuItem ViewToolStripMenuItem;
+        public ToolStripMenuItem HomeToolStripMenuItem;
+        public ToolStripMenuItem ViewToolStripMenuItem;
         public NewMenu(Form1 form)
         {
             ImageScalingSize = new Size(36, 36);

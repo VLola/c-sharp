@@ -11,20 +11,20 @@ namespace Project_47.Forms.Controls
 {
     public class GroupBoxFont: GroupBox
     {
-        private ComboBox FontName;
-        private ComboBox FontSize;
-        private MenuStrip TopButtons;
-        private NewToolStripMenuItem IncreaseTheSize;
-        private NewToolStripMenuItem ReduceTheSize;
-        private MenuStrip BottomButtons;
-        private NewToolStripMenuItem Bold;
-        private NewToolStripMenuItem Italic;
-        private NewToolStripMenuItem Underlined;
-        private NewToolStripMenuItem CrossedOut;
-        private NewToolStripMenuItem Subscripr;
-        private NewToolStripMenuItem Superscript;
-        private ToolStripSplitButton TextColor;
-        private ToolStripSplitButton TextBackground;
+        public ComboBox FontName;
+        public ComboBox FontSize;
+        public MenuStrip TopButtons;
+        public NewToolStripMenuItem IncreaseTheSize;
+        public NewToolStripMenuItem ReduceTheSize;
+        public MenuStrip BottomButtons;
+        public NewToolStripMenuItem Bold;
+        public NewToolStripMenuItem Italic;
+        public NewToolStripMenuItem Underlined;
+        public NewToolStripMenuItem CrossedOut;
+        public NewToolStripMenuItem Subscripr;
+        public NewToolStripMenuItem Superscript;
+        public ToolStripSplitButton TextColor;
+        public ToolStripSplitButton TextBackground;
         public GroupBoxFont()
         {
             FontName = new ComboBox();

@@ -82,6 +82,9 @@
     <Compile Include="Forms\Controls\NewRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\Controls\NewToolStripContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Controls\NewToolStripItem.cs">
       <SubType>Component</SubType>
     </Compile>

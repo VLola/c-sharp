@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Project_48.Forms.Control
@@ -13,7 +14,7 @@ namespace Project_48.Forms.Control
         private Button EnterButton = new Button();
         private RadioButton LoginButton = new RadioButton();
         private RadioButton RegisterButton = new RadioButton();
-
+        private string pattern = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
         public GroupBoxLogin()
         {
             Location = new Point(10, 40);
@@ -30,6 +31,7 @@ namespace Project_48.Forms.Control
             Email.Location = new Point(100, 25);
             Email.Size = new Size(70, 20);
 
+            Pass.UseSystemPasswordChar = true;
             Pass.Location = new Point(100, 55);
             Pass.Size = new Size(70, 20);
 
@@ -60,14 +62,18 @@ namespace Project_48.Forms.Control
 
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            if (RegisterButton.Checked) Connect.Registration(Email.Text, Pass.Text);
-            else
+            if (CheckEmail())
             {
-                if (Connect.Login(Email.Text, Pass.Text)) Visible = false;
-                else MessageBox.Show("Error login!");
+                if (RegisterButton.Checked) Connect.Registration(Email.Text, Pass.Text);
+                else
+                {
+                    if (Connect.Login(Email.Text, Pass.Text)) Visible = false;
+                    else MessageBox.Show("Error login!");
+                }
+                Email.Text = "";
+                Pass.Text = "";
             }
-            Email.Text = "";
-            Pass.Text = "";
+            else MessageBox.Show("Error!");
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -78,6 +84,15 @@ namespace Project_48.Forms.Control
         private void LoginButton_Click(object sender, EventArgs e)
         {
             EnterButton.Text = "Login";
+        }
+        private bool CheckEmail()
+        {
+            if (Email.Text != "" && Pass.Text != "")
+            {
+                if (Regex.IsMatch(Email.Text, pattern, RegexOptions.IgnoreCase)) return true;
+                else return false;
+            }
+            else return false;
         }
     }
 }

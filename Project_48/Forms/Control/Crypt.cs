@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project_48.Forms.Control
 {
-    public class Crypt
+    public static class Crypt
     {
-        public string Generate(string pass)
+        public static string Generate(string pass)
         {
-            return BCrypt.Net.BCrypt.HashPassword("Pass");
+            return BCrypt.Net.BCrypt.HashPassword(pass);
+        }
+        public static bool Veryfy(string pass, string hash)
+        {
+            return BCrypt.Net.BCrypt.Verify(pass, hash);
         }
     }
 }

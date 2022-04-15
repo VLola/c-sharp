@@ -76,9 +76,6 @@
     <Compile Include="Forms\Controls\NewButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Controls\NewCheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Forms\Controls\NewMenu.cs">
       <SubType>Component</SubType>
     </Compile>

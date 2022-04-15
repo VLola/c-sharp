@@ -25,6 +25,24 @@ namespace Project_47.Forms.Controls
             ImageScaling = ToolStripItemImageScaling.None;
             Size = new Size(23, 22);
         }
+        public NewToolStripMenuItem(Image image, bool CheckOnClick)
+        {
+            this.CheckOnClick = CheckOnClick;
+            BackColor = Color.White;
+            Image = image;
+            AutoSize = false;
+            ImageScaling = ToolStripItemImageScaling.None;
+            Size = new Size(23, 22);
+            Margin = new Padding(1);
+            CheckStateChanged += NewToolStripMenuItem_CheckStateChanged;
+        }
+
+        private void NewToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (Checked) BackColor = SystemColors.GradientActiveCaption;
+            else BackColor = Color.White;
+        }
+
 
     }
 }

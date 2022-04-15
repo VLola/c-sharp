@@ -17,10 +17,10 @@ namespace Project_47.Forms.Controls
         public NewToolStripMenuItem IncreaseTheSize;
         public NewToolStripMenuItem ReduceTheSize;
         public MenuStrip BottomButtons;
-        public NewCheckBox Bold;
-        public NewCheckBox Italic;
-        public NewCheckBox Underlined;
-        public NewCheckBox StrikeOut;
+        public NewToolStripMenuItem Bold;
+        public NewToolStripMenuItem Italic;
+        public NewToolStripMenuItem Underlined;
+        public NewToolStripMenuItem StrikeOut;
         public NewToolStripMenuItem Subscripr;
         public NewToolStripMenuItem Superscript;
         public ToolStripSplitButton TextColor;
@@ -40,13 +40,13 @@ namespace Project_47.Forms.Controls
             TopButtons.Items.Add(IncreaseTheSize = new NewToolStripMenuItem(Resources.IncreaseTheSize));
             TopButtons.Items.Add(ReduceTheSize = new NewToolStripMenuItem(Resources.ReduceTheSize));
 
-            BottomButtons = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(5, 50), Width = 220 };
-            BottomButtons.Items.Add(new ToolStripControlHost(Bold = new NewCheckBox(Resources.Bold)) { AutoSize = false });
-            BottomButtons.Items.Add(new ToolStripControlHost(Italic = new NewCheckBox(Resources.Italic)) { AutoSize = false });
-            BottomButtons.Items.Add(new ToolStripControlHost(Underlined = new NewCheckBox(Resources.Underlined)) { AutoSize = false });
-            BottomButtons.Items.Add(new ToolStripControlHost(StrikeOut = new NewCheckBox(Resources.CrossedOut)) { AutoSize = false });
-            BottomButtons.Items.Add(Subscripr = new NewToolStripMenuItem(Resources.Subscripr));
-            BottomButtons.Items.Add(Superscript = new NewToolStripMenuItem(Resources.Superscript));
+            BottomButtons = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 50), Width = 230 };
+            BottomButtons.Items.Add(Bold = new NewToolStripMenuItem(Resources.Bold, true));
+            BottomButtons.Items.Add(Italic = new NewToolStripMenuItem(Resources.Italic, true));
+            BottomButtons.Items.Add(Underlined = new NewToolStripMenuItem(Resources.Underlined, true));
+            BottomButtons.Items.Add(StrikeOut = new NewToolStripMenuItem(Resources.CrossedOut, true));
+            BottomButtons.Items.Add(Subscripr = new NewToolStripMenuItem(Resources.Subscripr, true));
+            BottomButtons.Items.Add(Superscript = new NewToolStripMenuItem(Resources.Superscript, true));
             BottomButtons.Items.Add(TextColor = new ToolStripSplitButton(Resources.TextColor) { AutoSize = false, Size = new Size(36, 22)});
             BottomButtons.Items.Add(TextBackground = new ToolStripSplitButton(Resources.TextBackground) { AutoSize = false, Size = new Size(36, 22) });
 

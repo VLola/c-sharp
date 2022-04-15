@@ -45,6 +45,33 @@ namespace Project_47
             newMenu.panelMain.boxFont.Italic.Click += Italic_Click;
             newMenu.panelMain.boxFont.Underlined.Click += Underlined_Click;
             newMenu.panelMain.boxFont.StrikeOut.Click += StrikeOut_Click;
+            newMenu.panelMain.boxFont.Subscripr.Click += Subscripr_Click;
+            newMenu.panelMain.boxFont.Superscript.Click += Superscript_Click;
+        }
+
+        private void Superscript_Click(object sender, EventArgs e)
+        {
+            if (newMenu.panelMain.boxFont.Superscript.Checked)
+            {
+                newMenu.panelMain.boxFont.Subscripr.Checked = false;
+                text.SelectionCharOffset = (int)newMenu.panelMain.boxFont.FontSize.SelectedItem / 2;
+            }
+            else {
+                text.SelectionCharOffset = 0;
+            }
+        }
+
+        private void Subscripr_Click(object sender, EventArgs e)
+        {
+
+            if (newMenu.panelMain.boxFont.Subscripr.Checked)
+            {
+                newMenu.panelMain.boxFont.Superscript.Checked = false;
+                text.SelectionCharOffset = -(int)newMenu.panelMain.boxFont.FontSize.SelectedItem / 2;
+            }
+            else {
+                text.SelectionCharOffset = 0;
+            } 
         }
 
         private void StrikeOut_Click(object sender, EventArgs e) { FontStyleCheck(); }
@@ -114,7 +141,7 @@ namespace Project_47
         private void FontSizeChanged()
         {
             Font font = text.SelectionFont;
-            float newSize = (float)Convert.ToDouble(newMenu.panelMain.boxFont.FontSize.SelectedItem);
+            int newSize = (int)newMenu.panelMain.boxFont.FontSize.SelectedItem;
             text.SelectionFont = new Font(font.FontFamily, newSize, font.Style);
         }
 

@@ -30,7 +30,7 @@ namespace Project_47.Forms.Controls
                 ,SpecialInsert = new NewToolStripMenuItem("Special insert", Resources.SpecialInsert)
             });
 
-            TextChange = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(70, 10), Size = new Size(70, 50), LayoutStyle = ToolStripLayoutStyle.Flow };
+            TextChange = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(70, 10), Size = new Size(70, 50), LayoutStyle = ToolStripLayoutStyle.Flow, Enabled = false };
             TextChange.Items.Add(Cut = new NewToolStripMenuItem("Cut", Resources.Cut));
             TextChange.Items.Add(Copy = new NewToolStripMenuItem("Copy", Resources.Copy));
 

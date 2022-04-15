@@ -11,13 +11,13 @@ namespace Project_47.Forms.Controls
 {
     public class GroupBoxEditing: GroupBox
     {
-        private MenuStrip Editing;
-        private NewToolStripMenuItem Search;
-        private NewToolStripMenuItem Replacement;
-        private NewToolStripMenuItem SelectAll;
+        public MenuStrip Editing;
+        public NewToolStripMenuItem Search;
+        public NewToolStripMenuItem Replacement;
+        public NewToolStripMenuItem SelectAll;
         public GroupBoxEditing()
         {
-            Editing = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(120, 65), LayoutStyle = ToolStripLayoutStyle.Flow };
+            Editing = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(10, 10), Size = new Size(120, 65), LayoutStyle = ToolStripLayoutStyle.Flow, Enabled = false };
             Editing.Items.Add(Search = new NewToolStripMenuItem("Search", Resources.Search));
             Editing.Items.Add(Replacement = new NewToolStripMenuItem("Replacement", Resources.Replacement));
             Editing.Items.Add(SelectAll = new NewToolStripMenuItem("SelectAll", Resources.SelectAll));

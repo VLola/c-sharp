@@ -25,5 +25,6 @@ namespace Project_47.Forms.Controls
             ImageScaling = ToolStripItemImageScaling.None;
             Size = new Size(23, 22);
         }
+
     }
 }

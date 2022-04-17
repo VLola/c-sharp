@@ -55,6 +55,7 @@ namespace Project_47.Forms.Controls
             label2.Location = new Point(100, 80);
             label2.ForeColor = Color.Gray;
 
+
             Location = new Point(149, 0);
             Size = new Size(240, 105);
             Controls.Add(FontName);

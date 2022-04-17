@@ -39,7 +39,7 @@ namespace Project_47
             this.ClientSize = new System.Drawing.Size(1060, 600);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Document - WordPad";
             this.ResumeLayout(false);
 
         }

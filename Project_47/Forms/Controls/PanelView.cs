@@ -5,9 +5,9 @@ namespace Project_47.Forms.Controls
 {
     public class PanelView: Panel
     {
-        public GroupBoxScale boxScale = new GroupBoxScale();
-        public GroupBoxShowOrHide boxShowOrHide = new GroupBoxShowOrHide();
-        public GroupBoxParameters boxParameters = new GroupBoxParameters();
+        public GroupBoxScale BoxScale { get; set; } = new GroupBoxScale();
+        public GroupBoxShowOrHide BoxShowOrHide { get; set; } = new GroupBoxShowOrHide();
+        public GroupBoxParameters BoxParameters { get; set; } = new GroupBoxParameters();
         public PanelView()
         {
             Location = new Point(0, 18);
@@ -15,9 +15,9 @@ namespace Project_47.Forms.Controls
             Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             BackColor = Color.White;
 
-            Controls.Add(boxScale);
-            Controls.Add(boxShowOrHide);
-            Controls.Add(boxParameters);
+            Controls.Add(BoxScale);
+            Controls.Add(BoxShowOrHide);
+            Controls.Add(BoxParameters);
         }
     }
 }

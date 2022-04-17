@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project_47.Forms.Controls
 {
     public class PanelMain: Panel
     {
-        public GroupBoxClipboard boxClipboard = new GroupBoxClipboard();
-        public GroupBoxFont boxFont = new GroupBoxFont();
-        public GroupBoxParagraph boxParagraph = new GroupBoxParagraph();
-        public GroupBoxInsert boxInsert = new GroupBoxInsert();
-        public GroupBoxEditing boxEditing = new GroupBoxEditing();
+        public GroupBoxClipboard BoxClipboard { get; set; } = new GroupBoxClipboard();
+        public GroupBoxFont BoxFont { get; set; } = new GroupBoxFont();
+        public GroupBoxParagraph BoxParagraph { get; set; } = new GroupBoxParagraph();
+        public GroupBoxInsert BoxInsert { get; set; } = new GroupBoxInsert();
+        public GroupBoxEditing BoxEditing { get; set; } = new GroupBoxEditing();
         public PanelMain()
         {
             Location = new Point(0, 18);
@@ -22,11 +17,11 @@ namespace Project_47.Forms.Controls
             Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             BackColor = Color.White;
 
-            Controls.Add(boxClipboard);
-            Controls.Add(boxFont);
-            Controls.Add(boxParagraph);
-            Controls.Add(boxInsert);
-            Controls.Add(boxEditing);
+            Controls.Add(BoxClipboard);
+            Controls.Add(BoxFont);
+            Controls.Add(BoxParagraph);
+            Controls.Add(BoxInsert);
+            Controls.Add(BoxEditing);
         }
     }
 }

@@ -1,28 +1,23 @@
 ﻿using Project_47.Properties;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_47.Forms.Controls
 {
     public class GroupBoxParagraph: GroupBox
     {
-        private MenuStrip TopButtons;
-        private NewToolStripMenuItem DecreaseIndent;
-        private NewToolStripMenuItem IncreaseIndent;
-        private ToolStripSplitButton StartList;
-        private NewToolStripMenuItem LineSpacing;
+        public MenuStrip TopButtons;
+        public NewToolStripMenuItem DecreaseIndent;
+        public NewToolStripMenuItem IncreaseIndent;
+        public ToolStripSplitButton StartList;
+        public NewToolStripMenuItem LineSpacing;
 
-        private MenuStrip BottomButtons;
-        private NewToolStripMenuItem LeftButton;
-        private NewToolStripMenuItem CentreButton;
-        private NewToolStripMenuItem RightButton;
-        private NewToolStripMenuItem AlignButton;
-        private NewToolStripMenuItem ParagraphButton;
+        public MenuStrip BottomButtons;
+        public NewToolStripMenuItem LeftButton;
+        public NewToolStripMenuItem CentreButton;
+        public NewToolStripMenuItem RightButton;
+        public NewToolStripMenuItem AlignButton;
+        public NewToolStripMenuItem ParagraphButton;
         public GroupBoxParagraph()
         {
             TopButtons = new MenuStrip() { BackColor = Color.White, AutoSize = false, Dock = DockStyle.None, Location = new Point(0, 18), Width = 125 };

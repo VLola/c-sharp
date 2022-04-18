@@ -11,6 +11,7 @@ namespace Project_47
     public partial class Form1 : Form
     {
         #region Objects
+        private string Path;
         private NewToolStripContainer newToolStripContainer;
         private NewRichTextBox text;
         private NewMenu newMenu;
@@ -271,7 +272,17 @@ namespace Project_47
         #region Menu
         private void Save_As_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (text.Text != "")
+            {
+                saveFileDialog.ShowDialog();
+                string new_path = saveFileDialog.FileName;
+                if (new_path != "")
+                {
+                    Path = new_path;
+                    File.WriteAllText(new_path, text.Text);
+                }
+                saveFileDialog.Reset();
+            }
         }
 
         private void PlainText_Click(object sender, EventArgs e)
@@ -331,7 +342,17 @@ namespace Project_47
 
         private void Save_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (text.Text != "")
+            {
+                if (Path != "")
+                {
+                    if (text.Text != File.ReadAllText(Path))
+                    {
+                        File.WriteAllText(Path, text.Text);
+                    }
+                }
+                else Save_As_Click(sender, e);
+            }
         }
 
         private void Open_Click(object sender, EventArgs e)
@@ -343,6 +364,7 @@ namespace Project_47
             if (path != "")
             {
                 Text = openFileDialog.SafeFileName + " - WordPad";
+                Path = path;
                 text.Text = File.ReadAllText(path);
             }
             openFileDialog.Reset();
@@ -350,9 +372,19 @@ namespace Project_47
 
         private void Create_Click(object sender, EventArgs e)
         {
-            if(text.Text == "" && Text == "Document - WordPad")
+            if(text.Text != "")                                                     // Write
             {
-                // write
+                if (Path == "")
+                {
+                    if (text.Text != File.ReadAllText(Path))
+                    {
+                        File.WriteAllText(Path, text.Text);
+                        text.Text = "";
+                        Path = "";
+                    }
+                }
+                else Save_As_Click(sender, e);
+                
             }
         }
         #endregion

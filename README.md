@@ -3,21 +3,26 @@
 Write your clone of WordPad
 
 Menu File:
+
 ![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_47/Resources/Menu_File.png)
 
 Menu Save as:
+
 ![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_47/Resources/Menu_SaveAs.png)
 
 
 Menu Print:
+
 ![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_47/Resources/Menu_Print.png)
 
 
 Menu Main:
+
 ![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_47/Resources/Menu_Main.png)
 
 
 Menu View:
+
 ![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_47/Resources/Menu_View.png)
 ___
 # Project 46.

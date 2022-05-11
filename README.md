@@ -28,6 +28,10 @@ ___
 # Project 46.
 
 Write your clone of NotePad++
+
+Menu:
+
+![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_46/Resources/Menu_Notepad.png)
 ___
 # Project 45.
 

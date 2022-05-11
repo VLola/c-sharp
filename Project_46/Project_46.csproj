@@ -122,5 +122,8 @@
   <ItemGroup>
     <None Include="Resources\Redo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_Notepad.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

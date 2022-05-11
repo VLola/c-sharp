@@ -10,7 +10,7 @@ namespace Project_48.Forms.Control
 {
     public static class Connect
     { 
-        public static string connectionString = @"Data Source=DESKTOP-TBFG5D3\SQLEXPRESS;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static void Registration(string email, string pass)
         {
             if (CheckEmail(email)) MessageBox.Show("User exists!");

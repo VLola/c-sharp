@@ -318,5 +318,20 @@
   <ItemGroup>
     <None Include="Resources\icon.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_SaveAs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_Main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_File.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

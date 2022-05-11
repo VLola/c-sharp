@@ -1,3 +1,20 @@
+# Project 48.
+
+Implement 2 forms
+- Authorizations
+- Registrations
+
+Data model :
+- email
+- password (5-15 characters)
+
+Through dapper and MVC pattern to implement the work of the model
+On the server side, there must be procedures !
+The password must be transmitted unencrypted !
+Add validation for mail (presence of '@' and '.' in the address)
+
+![Image text](https://raw.githubusercontent.com/VLola/c-sharp/master/Project_48/Resources/Form_Login.png)
+___
 # Project 47.
 
 Write your clone of WordPad

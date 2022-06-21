@@ -1,4 +1,24 @@
 ___
+# Project 55.
+
+- ### Task 1
+
+Create a console application that spawns
+flow. This thread should display numbers in the console
+from 0 to 50.
+
+- ### Task 2
+
+Add a transfer option to the first task
+start and end of a range of numbers. Borders defines user.
+
+- ### Task 3
+
+Add to the first task the ability to define
+custom number of threads. Range restrictions
+the numbers are also user-selectable.
+
+___
 # Project 41.
 
 Develop a class "Account for payment".
